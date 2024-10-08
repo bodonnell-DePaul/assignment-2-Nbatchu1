@@ -8,13 +8,13 @@ function FormGroup() {
                 <p className="w-auto lead">Add New TODO Item</p>
                 <Form>
                     <Form.Group className="mb-2">
-                        <Form.Control type="text" placeholder="Todo Title" />
+                        <Form.Label>Add todo item</Form.Label>
+                        <Form.Control type="text" placeholder="Add todo item" />
                     </Form.Group>
-                    <Form.Group className="mb-2">
-                        <Form.Control type="text" placeholder="Todo Description" />
+                    <Form.Group className="mb-4">
+                        <input aria-label="Due Date" type="date" className="w-100" />
                     </Form.Group>
-                    <Button variant="primary" type="submit">
-                        Add
+                    <Button variant="primary w-100" type="submit" value={"Add Todo"}>
                     </Button>
                 </Form>
             </Card.Body>
