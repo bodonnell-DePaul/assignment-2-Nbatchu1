@@ -3,21 +3,18 @@ import { Card, Form, Button } from "react-bootstrap";
 
 function FormGroup() {
     return (
-        <Card className="p-2">
-            <Card.Body>
-                <p className="w-auto lead">Add New TODO Item</p>
-                <Form>
-                    <Form.Group className="mb-2">
-                        <Form.Label>Add todo item</Form.Label>
+        <Card className="p-2" style={{ backgroundColor: '#1FEB6A' }}>
+                <Form className="my-2 ">
+                    <Form.Group className="mb-3">
+                    <Form.Label className='mx-2'>Todo item</Form.Label>
                         <Form.Control type="text" placeholder="Add todo item" />
                     </Form.Group>
                     <Form.Group className="mb-4">
-                        <Form.Label>Due Date</Form.Label>
+                        <Form.Label className='mx-2'>Due Date</Form.Label>
                         <input aria-label="Due Date" type="date" className="w-100" />
                     </Form.Group>
-                    <Button className="btn btn-primary w-100" type="submit" value="Add Todo" />
+                    <div className='btn btn-primary mb-3 w-100' type="submit">Add Todo</div>
                 </Form>
-            </Card.Body>
         </Card>
     );
 }

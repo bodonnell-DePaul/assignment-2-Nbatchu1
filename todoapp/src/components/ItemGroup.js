@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
 import items from '../todoItems';
 
-function ItemGroup() {
-    const [selectedIndex, setSelectedIndex] = useState(0);
-
+function ItemGroup({selectId, setSelectedId}) {
     const getActiveColor = (dueDate) => {
         const currentDate = new Date();
         const dueDateObj = new Date(dueDate);
@@ -22,10 +20,11 @@ function ItemGroup() {
                 <ListGroup.Item
                     variant={getActiveColor(item.dueDate)}
                     eventKey={item.dueDate}
+                    className='mb-2'
                     action={true}
-                    active={i === selectedIndex}
+                    active={i === selectId}
                     key={i}
-                    onClick={() => setSelectedIndex(i)}>
+                    onClick={() => setSelectedId(i)}>
                     <a className={'text-decoration-none text-reset list-group-item-' + getActiveColor(item.dueDate)}>{item.title}</a>
                 </ListGroup.Item>
             ))
