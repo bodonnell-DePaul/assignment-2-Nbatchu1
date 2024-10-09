@@ -12,9 +12,11 @@ function FormGroup() {
                         <Form.Control type="text" placeholder="Add todo item" />
                     </Form.Group>
                     <Form.Group className="mb-4">
+                        <Form.Label>Due Date</Form.Label>
                         <input aria-label="Due Date" type="date" className="w-100" />
                     </Form.Group>
                     <Button variant="primary w-100" type="submit" value={"Add Todo"}>
+                    Add Todo
                     </Button>
                 </Form>
             </Card.Body>
