@@ -4,10 +4,12 @@ import items from '../todoItems';
 function ItemPane() {
     return (
         <Tab.Content>
-            <Tab.Pane key={"message"}>Select an item to see description</Tab.Pane>
             {
                 items.map(item => (
-                    <Tab.Pane eventKey={item.dueDate} key={item.dueDate}>{item.description}</Tab.Pane>
+                    <Tab.Pane className='mt-2' eventKey={item.dueDate} key={item.dueDate}>
+                        <h6 contentEditable>{item.description}</h6>
+                        <input type='date' value={item.dueDate} onChange={() => {}} />
+                    </Tab.Pane>
                 ))
             }
         </Tab.Content>

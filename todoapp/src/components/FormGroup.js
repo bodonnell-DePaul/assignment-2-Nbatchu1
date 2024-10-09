@@ -15,9 +15,7 @@ function FormGroup() {
                         <Form.Label>Due Date</Form.Label>
                         <input aria-label="Due Date" type="date" className="w-100" />
                     </Form.Group>
-                    <Button variant="primary w-100" type="submit" value={"Add Todo"}>
-                    Add Todo
-                    </Button>
+                    <Button className="btn btn-primary w-100" type="submit" value="Add Todo" />
                 </Form>
             </Card.Body>
         </Card>

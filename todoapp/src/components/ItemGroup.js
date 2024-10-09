@@ -6,16 +6,16 @@ function ItemGroup() {
     const [selectedIndex, setSelectedIndex] = useState(0);
 
     const getActiveColor = (dueDate) => {
-    const currentDate = new Date();
-    const dueDateObj = new Date(dueDate);
-    const diffTime = Math.abs(dueDateObj - currentDate);
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  
-    if (diffDays > 7) return 'primary';
-    if (diffDays <= 7 && diffDays > 4) return 'success';
-    if (diffDays <= 4 && diffDays > 2) return 'warning';
-    return 'danger';
-  };
+        const currentDate = new Date();
+        const dueDateObj = new Date(dueDate);
+        const diffTime = Math.abs(dueDateObj - currentDate);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+        if (diffDays > 7) return 'primary';
+        if (diffDays <= 7 && diffDays > 4) return 'success';
+        if (diffDays <= 4 && diffDays > 2) return 'warning';
+        return 'danger';
+    };
     return (<ListGroup defaultActiveKey={0}>
         {
             items.map((item, i) => (
@@ -26,7 +26,7 @@ function ItemGroup() {
                     active={i === selectedIndex}
                     key={i}
                     onClick={() => setSelectedIndex(i)}>
-                    {item.title}
+                    <a className={'text-decoration-none text-reset list-group-item-' + getActiveColor(item.dueDate)}>{item.title}</a>
                 </ListGroup.Item>
             ))
         }
